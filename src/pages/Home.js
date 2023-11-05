@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import MovieCard from '../components/MovieCard'
+import NavBar from "../components/NavBar";
 
 function Home() {
 
   const [movies, setMovies] = useState([])
+  
+
+
 
   useEffect (()=> { 
   fetch(`http://localhost:4000/movies`)
@@ -12,11 +16,13 @@ function Home() {
   }
   ,[])
 
+  
 
   return (
     <>
       <header>
         <h1>Home Page</h1>
+        <NavBar />
       </header>
       <main>
         {movies.map((movie)=> 
